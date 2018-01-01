@@ -1,0 +1,34 @@
+﻿<Window x:Class="MultVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MultVM"
+        xmlns:vm="clr-namespace:MultVM.ViewModel"
+        xmlns:views="clr-namespace:MultVM.Views"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="91*"/>
+            <ColumnDefinition Width="426*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Button Content="Search" Margin="5" Command="{Binding SearchBtnClickedCmd}"></Button>
+            <Button Content="Add" Margin="5" Command="{Binding AddBtnClickedCmd}"></Button>
+        </StackPanel>
+
+        <ContentControl Grid.Column="1" Content="{ Binding CurrentVM }">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type vm:AddVM}">
+                    <views:AddVIEW/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type vm:SearchVM}">
+                    <views:SearchView/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+    </Grid>
+</Window>

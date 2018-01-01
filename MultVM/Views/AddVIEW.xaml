@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="MultVM.Views.AddVIEW"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MultVM.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="468" d:DesignWidth="631" DataContext="{Binding Add, Mode=OneWay, Source={StaticResource Locator}}">
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="180"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="13*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Manufacturer" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+        <ComboBox Margin="10" Grid.Row="0" Grid.Column="1" ></ComboBox>
+        
+        <Label Content="Typ" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+        <ComboBox Margin="10" Grid.Row="1" Grid.Column="1" ></ComboBox>
+        
+        <Label Content="Descr" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+        <TextBox Margin="10" Grid.Row="2" Grid.Column="1" ></TextBox>
+
+        <Label Content="Articel No" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+        <TextBox Margin="10" Grid.Row="3" Grid.Column="1" ></TextBox>
+
+        <Label Content="Price" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+        <TextBox Margin="10" Grid.Row="4" Grid.Column="1" ></TextBox>
+
+        <Button Content="Save" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="150" Height="30" Grid.Row="5" Grid.Column="2"></Button>
+    </Grid>
+</UserControl>
