@@ -8,7 +8,6 @@ namespace MultVM.ViewModel
     {
         // Properties to observer
         private ViewModelBase currentVM;
-
         public ViewModelBase CurrentVM {
             get { return currentVM; }
             set { currentVM = value; RaisePropertyChanged(); }
@@ -29,7 +28,5 @@ namespace MultVM.ViewModel
                 () => { CurrentVM = SimpleIoc.Default.GetInstance<SearchVM>(); }
             );
         }
-
-        // Demo
     }
 }
